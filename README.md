@@ -38,7 +38,9 @@ da<-RunPCA(da, features = VariableFeatures(object = da))
 print(da[["pca"]], dims = 1:5, nfeatures = 5)
 VizDimLoadings(da, dims = 1:2, reduction= "pca")
 DimHeatmap(da, dims = 1, cells = 500)
+
 DimHeatmap(da, dims = 1:15, cells = 500)
+
 da <- JackStraw(da, num.replicate = 100)
 JackStrawPlot(da, dims = 1:20)
 da <-ScoreJackStraw(da, dims = 1:20)
